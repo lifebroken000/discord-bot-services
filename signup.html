@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<h2 style="text-align:center">Create Account</h2>
+
+<form id="signupForm" style="max-width:400px;margin:auto">
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="password" id="password" placeholder="Password" required>
+  <button type="submit">Sign Up</button>
+</form>
+
+<p style="text-align:center">
+  Already have an account?
+  <a href="login.html">Login</a>
+</p>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyA7jaB0RW-Ibr316JOn0Gkq239bQl_Hni8",
+    authDomain: "discordbotwork-b9990.firebaseapp.com",
+    projectId: "discordbotwork-b9990",
+    storageBucket: "discordbotwork-b9990.firebasestorage.app",
+    messagingSenderId: "668231822956",
+    appId: "1:668231822956:web:e4f36833ffeb81b66f7249"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  document.getElementById("signupForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        alert("Account created!");
+        window.location.href = "login.html";
+      })
+      .catch(err => alert(err.message));
+  });
+</script>
+
+</body>
+</html>
