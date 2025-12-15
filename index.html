@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discord Bot Services</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- NAVIGATION -->
     <header>
@@ -96,9 +98,14 @@
             <textarea placeholder="Bot Requirements" required></textarea>
             <button type="submit">Send Order</button>
         </form>
+
         <div class="links">
-            <a href="https://discord.com/" target="_blank" class="btn"><i class="fab fa-discord"></i> Contact on Discord</a>
-            <a href="https://www.paypal.com/paypalme/yourlink" target="_blank" class="btn"><i class="fas fa-money-bill-wave"></i> Pay via PayPal</a>
+            <a href="https://discord.com/" target="_blank" class="btn">
+                <i class="fab fa-discord"></i> Contact on Discord
+            </a>
+            <a href="https://www.paypal.com/paypalme/yourlink" target="_blank" class="btn">
+                <i class="fas fa-money-bill-wave"></i> Pay via PayPal
+            </a>
         </div>
     </section>
 
@@ -107,6 +114,26 @@
         <p>&copy; 2025 BotMaster | Professional Discord Bot Services</p>
     </footer>
 
+    <!-- 🔥 FIREBASE (CONNECTED CORRECTLY) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA7jaB0RW-Ibr316JOn0Gkq239bQl_Hni8",
+            authDomain: "discordbotwork-b9990.firebaseapp.com",
+            projectId: "discordbotwork-b9990",
+            storageBucket: "discordbotwork-b9990.firebasestorage.app",
+            messagingSenderId: "668231822956",
+            appId: "1:668231822956:web:e4f36833ffeb81b66f7249",
+            measurementId: "G-DM9VWFENGW"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
+    <!-- YOUR JS -->
     <script src="script.js"></script>
 </body>
 </html>
